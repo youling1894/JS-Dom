@@ -1,0 +1,113 @@
+<body>
+  <div class="container" id="container">
+    <div class="header">
+      用js预览图片
+    </div>
+    <div class="nav">
+      <a
+        href="file:///Users/user/Desktop/tr/jsDom/public/img/4-1.jpg"
+        title="one pic"
+      >
+        <img src="" alt="" />
+      </a>
+      <a
+        href="file:///Users/user/Desktop/tr/jsDom/public/img/4-2.jpg"
+        title="two pic"
+      >
+        <img src="" alt="" />
+      </a>
+      <a href="file:///Users/user/Desktop/tr/jsDom/public/img/4-3.png"
+        ><img src="" alt=""
+      /></a>
+      <a
+        href="file:///Users/user/Desktop/tr/jsDom/public/img/4-4.png"
+        title="four pic"
+        ><img src="" alt=""
+      /></a>
+    </div>
+    <div class="pic">
+      <img src="./public/img/pre.jpg" id="pre" alt="" />
+    </div>
+    <div class="info" id="info">
+      title...
+    </div>
+  </div>
+</body>
+<script>
+  // window.onload = countChildren;
+  addLoadEvent(countChildren);
+  function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != "function") {
+      window.onload = func;
+    } else {
+      window.onload = function () {
+        oldonload();
+        func();
+      };
+    }
+  }
+
+  function countChildren() {
+    if (!document.getElementById) return false;
+    if (!document.getElementById("pre")) return false;
+    var gallery = document.getElementsByClassName("nav")[0];
+    var links = gallery.getElementsByTagName("a");
+    console.log(links);
+    for (var i = 0; i < links.length; i++) {
+      var icon = links[i].getElementsByTagName("img")[0];
+      if (icon) {
+        icon.src = links[i].getAttribute("href"); //HTML DOM
+      }
+      links[i].onclick = function () {
+        return !showPic(this);
+      };
+    }
+  }
+  function showPic(whichPic) {
+    var picUrl = whichPic.getAttribute("href");
+    var pre = document.getElementById("pre");
+    if (!pre) return false;
+    pre.setAttribute("src", picUrl); //DOM Core
+    var info = document.getElementById("info");
+    if (info) {
+      var picTitle = whichPic.getAttribute("title")
+        ? whichPic.getAttribute("title")
+        : "";
+      info.firstChild.nodeValue = picTitle;
+    }
+    return true;
+  }
+</script>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: yellowgreen;
+    height: 100vh;
+  }
+  .container {
+    width: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 40px 400px 40px;
+    grid-gap: 10px;
+  }
+  .header {
+    font-size: 20px;
+    align-self: center;
+  }
+  .info {
+    align-self: center;
+  }
+  .nav {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  img {
+    height: 100%;
+    width: 100%;
+  }
+</style>
