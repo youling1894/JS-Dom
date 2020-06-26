@@ -1,0 +1,9 @@
+p#example1 {
+  color: yellowgreen;
+  font-size: 25px;
+}
+.intro {
+  color: teal;
+  font-size: 22px;
+  font-weight: bold;
+}

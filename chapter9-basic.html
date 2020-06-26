@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter9</title>
+    <link rel="stylesheet" href="./public/style/chapter9.css" />
+  </head>
+  <body>
+    <p id="example" style="color: rebeccapurple; font-size: 20px;">
+      an example of a paragraph<br />
+      style属性只能返回内嵌样式
+    </p>
+    <p id="example1">
+      an example of a paragraph<br />
+      style属性只能返回内嵌样式
+    </p>
+    <p id="example2">
+      用JS设置style
+    </p>
+    <script>
+      window.onload = function () {
+        var para = document.getElementById("example");
+        console.log(para.nodeName);
+        console.log(para.nodeType);
+        console.log("color:" + para.style.color);
+        console.log("font-size:" + para.style.fontSize);
+
+        var para2 = document.getElementById("example2");
+        para2.style.color = "blue";
+        para2.style.fontSize = "22px";
+      };
+    </script>
+  </body>
+</html>
