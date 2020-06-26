@@ -1,0 +1,78 @@
+<body>
+  <div class="container" id="container">
+    <div class="header">
+      用js预览图片
+    </div>
+    <div class="nav">
+      <a
+        href="file:///Users/user/Desktop/tr/jsDom/public/img/4-1.jpg"
+        title="one pic"
+      >
+        <img
+          src="file:///Users/user/Desktop/tr/jsDom/public/img/4-1.jpg"
+          alt=""
+        />
+      </a>
+      <a
+        href="file:///Users/user/Desktop/tr/jsDom/public/img/4-2.jpg"
+        title="two pic"
+      >
+        <img
+          src="file:///Users/user/Desktop/tr/jsDom/public/img/4-2.jpg"
+          alt=""
+        />
+      </a>
+      <a href="file:///Users/user/Desktop/tr/jsDom/public/img/4-3.png"
+        ><img
+          src="file:///Users/user/Desktop/tr/jsDom/public/img/4-3.png"
+          alt=""
+      /></a>
+      <a
+        href="file:///Users/user/Desktop/tr/jsDom/public/img/4-4.png"
+        title="four pic"
+        ><img
+          src="file:///Users/user/Desktop/tr/jsDom/public/img/4-4.png"
+          alt=""
+      /></a>
+    </div>
+    <div class="pic">
+      <!-- <img src="./public/img/pre.jpg" id="pre" alt="" /> -->
+    </div>
+    <!-- <div class="info" id="info">
+      title...
+    </div> -->
+  </div>
+  <script src="./public/js/showPic.js"></script>
+</body>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: yellowgreen;
+    height: 100vh;
+  }
+  .container {
+    width: 600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 40px 400px 40px;
+    grid-gap: 10px;
+  }
+  .header {
+    font-size: 20px;
+    align-self: center;
+  }
+  .info {
+    align-self: center;
+  }
+  .nav {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  img {
+    height: 100%;
+    width: 100%;
+  }
+</style>

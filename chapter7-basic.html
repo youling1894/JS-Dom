@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      document.write(
+        "<b>test document write </b>只有在body里的script才可以实现，违背了行为与表现分离的原则。"
+      );
+    </script>
+    <hr />
+    <div id="inner"></div>
+    <div id="innerGet">hello get 一个inner内容</div>
+    <hr />
+    <div id="testdiv"></div>
+    <hr />
+    <div id="complex"></div>
+    <script src="./public/js/addLoadEvent.js"></script>
+    <script src="./public/js/example1.js"></script>
+  </body>
+</html>

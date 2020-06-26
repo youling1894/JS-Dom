@@ -1,0 +1,2 @@
+This is loaded asynchronously!
+脚本不会等待send响应，而是继续执行。
